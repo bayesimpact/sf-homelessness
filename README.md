@@ -11,7 +11,7 @@ Overview
 
 This package was created by the team at Bayes Impact for the San Francisco Mayor's Office as a final deliverable for the Fall 2014 data exploration conducted in pursuit of a Pay for Success (PFS) model to be implemented in San Francisco's homelessness services system.
 
-Over the course of 6 weeks, the Bayes Impact team assessed, cleaned, and analyzed the data provided by the City's HMIS and Compass Connecting Point systems.  In this package are the scripts we wrote to clean the data, as well as notebooks we used for exploration and data analysis.
+Over the course of 6 weeks, the Bayes Impact team assessed, cleaned, and analyzed the data provided by the City's HMIS and Compass Connecting Point systems.  In this package is the publicly released cleaning script:
 
 - **clean.py** is the script we wrote to clean the data.  It is explained more below, in the section *Data Cleaning*, and is also annotated inline.
 
