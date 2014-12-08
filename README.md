@@ -13,31 +13,14 @@ This package was created by the team at Bayes Impact for the San Francisco Mayor
 
 Over the course of 6 weeks, the Bayes Impact team assessed, cleaned, and analyzed the data provided by the City's HMIS and Compass Connecting Point systems.  In this package are the scripts we wrote to clean the data, as well as notebooks we used for exploration and data analysis.
 
-The files included in this package (in `./exploration/`) are listed below.
-
 - **clean.py** is the script we wrote to clean the data.  It is explained more below, in the section *Data Cleaning*, and is also annotated inline.
-- **util.py** is a package of a few utilities we wrote to assist with analysis.  It is annotated inline.
-- **data-exports.py** is a simple notebook for exporting data.
-- **2014-11-04-hmis-metrics.ipynb** - This is an [iPython Notebook](www.ipython.org) that contains the Python code detailing how metrics for the HMIS data was calculated, and then visualized. The metrics this Notebook covers include:
-	- How many families are there currently in shelter?
-	- How many families entered the shelter system each year since 2009?
-	- How many families, and how many children have entered the shelter program since Jan 15 of 2014?
-	- What is the average and median homeless family size? How has that changed over time?
-	- How long did the average family stay in a shelter in each quarter over the past four years?
-	- What is the distribution of times families are spending in a shelter, and how has that changed over time?
-	- How many homeless families, and individuals have entered the shelter system as broken down by the specific shelter?
-	- How many families were in shelters on an average night in each quarter over the past four years
-- **2014-11-20-CP-metrics.ipynb** - This is an iPython Notebook detailing the calculation and visualization of metrics for the Connecting Point data. The metrics this Notebook covers include:
-	- How many families were on waitlist on an average night in each quarter over the past two years?
-	- What is the distribution of time spent by families on the waitlist, over the past few years?
-	- What is the average and minimum number of days spent by families on the waitlist, for each quarter in the past few years?
 
 Data Generation
 ---
 
 ### Overview
 
-Put raw data in `./data/`.  Open a python shell or notebook in `./exploration/`:
+Put raw data in `../data/`.  Open a python shell or notebook in `./`:
 
 ```
 import pandas as pd
@@ -70,7 +53,7 @@ Most columns in the `hmis` and `cp` dataframes are self-explanatory.  However, t
 
 The bulk of the work done on this project was in data cleaning.  **clean.py** is the authoritative source on what cleaning was done, but a brief overview is provided here.
 
-`get_hmis_cp` is the main function to call in this script.  It pulls in relevant CSVs from `./data/`, merges them, cleans them, and returns a tuple containing the cleaned HMIS data and the cleaned Connecting Point data.  All other functions in **clean.py** are in service of `get_hmis_cp`.
+`get_hmis_cp` is the main function to call in this script.  It pulls in relevant CSVs from `../data/`, merges them, cleans them, and returns a tuple containing the cleaned HMIS data and the cleaned Connecting Point data.  All other functions in **clean.py** are in service of `get_hmis_cp`.
 
 Cleaning has a few steps:
 
@@ -104,14 +87,14 @@ This methodology assigns every record of the same person the same global individ
 
 ### Data files
 
-Data files that will be processed in the cleaning step should live in `./data/`.  The files that are required for cleaning to complete properly are below.
+Data files that will be processed in the cleaning step should live in `../data/`.  The files that are required for cleaning to complete properly are below.
 
-- `./data/hmis/program with family.csv` is the `program` CSV that the City sent us, including the column `Family Site Identifier`.
-- `./data/hmis/client de-identified.csv` is the `client` CSV that the City sent us; this file was not updated when we got the new `program` file, so we use this subset of clients.
-- `./data/connecting_point/case.csv` is the `case` CSV exported from the Connecting Point spreadsheet document sheet `Case1`.
-- `./data/connecting_point/client.csv` is the `client` CSV exported from the Connecting Point spreadsheet document sheet `Clients`.
-- `./data/hmis/hmis_client_duplicates_link_plus.csv` is the *Link Plus* de-duplication CSV for HMIS the City sent us.
-- `./data/connecting_point/cp_client_duplicates_link_plus.csv` is the *Link Plus* de-duplication CSV for Connecting Point the City sent us.
-- `./data/matching/cp_hmis_match_results.csv` is the *RecLink* de-duplication CSV (across the two datasets) the City sent us.
+- `../data/hmis/program with family.csv` is the `program` CSV that the City sent us, including the column `Family Site Identifier`.
+- `../data/hmis/client de-identified.csv` is the `client` CSV that the City sent us; this file was not updated when we got the new `program` file, so we use this subset of clients.
+- `../data/connecting_point/case.csv` is the `case` CSV exported from the Connecting Point spreadsheet document sheet `Case1`.
+- `../data/connecting_point/client.csv` is the `client` CSV exported from the Connecting Point spreadsheet document sheet `Clients`.
+- `../data/hmis/hmis_client_duplicates_link_plus.csv` is the *Link Plus* de-duplication CSV for HMIS the City sent us.
+- `../data/connecting_point/cp_client_duplicates_link_plus.csv` is the *Link Plus* de-duplication CSV for Connecting Point the City sent us.
+- `../data/matching/cp_hmis_match_results.csv` is the *RecLink* de-duplication CSV (across the two datasets) the City sent us.
 
 We are including in the package other, unused data files as well, but the files above are the only ones used for this project.
