@@ -85,7 +85,7 @@ We devised the following methodology, relying on the concept of [connected compo
 
 This methodology assigns every record of the same person the same global individual identifier, (across datasets,) and assigns every record of a person in the same family the same global family identifier, (also across datasets).  This allows us to accurately see the unique families within and across datasets, (by avoiding double-counting families,) and allows us to connect families across datasets, (to see, for example, if the same family that left the waitlist entered shelter right after).
 
-*N.B. Because this methodology builds a graph over the **entire** dataset and calculates global individual and family identifiers using connected components in the generated graph, it doesn't create a consistent mapping of person to across different runs.  That means that you **must** clean the entire dataset at once, not piecewise.  If, for example, you clean and export the HMIS data in one script and clean and export the Connecting Point data in another, the individual and family identifiers won't match.*
+*N.B. Because this methodology builds a graph over the __entire__ dataset and calculates global individual and family identifiers using connected components in the generated graph, it doesn't create a consistent mapping of person to across different runs.  That means that you __must__ clean the entire dataset at once, not piecewise.  If, for example, you clean and export the HMIS data in one script and clean and export the Connecting Point data in another, the individual and family identifiers won't match.*
 
 ### Data files
 
